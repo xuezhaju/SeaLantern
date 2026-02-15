@@ -57,7 +57,7 @@ pub fn get_system_info() -> Result<serde_json::Value, String> {
         .collect();
 
     // 针对不同平台计算磁盘空间
-    let (total_disk_space, total_disk_available) = {
+    let (total_disk_space, total_disk_available): (u64, u64) = {
         #[cfg(any(target_os = "macos", target_os = "linux"))]
         {
             // 在 macOS 和 Linux 上，只计算根目录 (/) 的磁盘空间
