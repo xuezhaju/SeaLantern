@@ -235,7 +235,6 @@ const iconMap: Record<string, string> = {
       <!-- 服务器选择 -->
       <div v-if="serverOptions.length > 0" class="server-selector">
         <template v-if="!ui.sidebarCollapsed">
-          <div class="server-selector-label">服务器</div>
           <SLSelect
             :options="serverOptions"
             :modelValue="currentServerId"
@@ -256,7 +255,7 @@ const iconMap: Record<string, string> = {
               stroke-linecap="round"
               stroke-linejoin="round"
             >
-              <!-- 服务器图标（修改为用户要求的样式） -->
+              <!-- 服务器图标 -->
               <rect x="8" y="4" width="8" height="12" rx="1" />
               <rect x="8" y="18" width="8" height="2" rx="1" />
               <line x1="12" y1="16" x2="12" y2="18" />
@@ -480,7 +479,6 @@ const iconMap: Record<string, string> = {
   padding: var(--sl-space-sm);
   margin-bottom: var(--sl-space-sm);
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 
@@ -509,9 +507,10 @@ const iconMap: Record<string, string> = {
   cursor: pointer;
   color: var(--sl-text-secondary);
   transition: all var(--sl-transition-fast);
-}
-
-.server-selector-icon:hover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
   background-color: var(--sl-primary-bg);
   color: var(--sl-primary);
 }
@@ -641,6 +640,7 @@ const iconMap: Record<string, string> = {
 .nav-item {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: var(--sl-space-sm);
   padding: 8px 12px;
   border-radius: var(--sl-radius-md);
@@ -650,6 +650,7 @@ const iconMap: Record<string, string> = {
   position: relative;
   white-space: nowrap;
   margin-top: 5px;
+  min-height: 36px;
 }
 
 .nav-item:hover {
@@ -678,6 +679,9 @@ const iconMap: Record<string, string> = {
 .nav-icon {
   flex-shrink: 0;
   transition: transform var(--sl-transition-normal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav-label {
