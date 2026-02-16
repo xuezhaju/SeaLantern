@@ -229,49 +229,6 @@ sea-lantern/
 └── README.md                          Project documentation (what you're reading now)
 ```
 
-## Implemented Features
-
-### Server Management
-
-- Create servers by importing JAR files, with one-click start and stop functionality
-- Data saved to JSON files, ensuring persistence across application restarts
-
-### Real-time Console
-
-- Backend uses independent threads to read stdout and stderr streams
-- Frontend polls for new logs every 800ms
-- Supports command input, Tab completion, up/down arrow history navigation, and shortcut command buttons
-- Logs stored in global store, persisting when switching between pages
-
-### Java Detection
-
-- Scans all drives from A to Z on application startup
-- Recursively searches common installation paths, including Minecraft's bundled Java in .minecraft/runtime
-- Sorts by version number and marks recommended Java versions
-
-### Configuration Editing
-
-- Reads server.properties and parses it into structured data with descriptions and categories
-- Boolean values use toggle switches, enums use dropdown selectors, numbers/strings use input fields
-- Changes are written directly back to the configuration file
-
-### Player Management
-
-- Reads whitelist.json / banned-players.json / ops.json to display player lists
-- Adds/removes players by sending Minecraft commands to the running server
-- Parses server logs to determine online player status
-
-### Application Settings
-
-- Automatically stops all servers when closing the application (enabled by default)
-- Auto-accepts EULA agreements
-- Configurable default memory allocation, port numbers, and JVM parameters
-
-### Software Updates
-
-- Checks Gitee releases to retrieve the latest version information
-- Displays update logs and provides one-click access to download links
-- Automatically compares version numbers and prompts users for updates
 
 ## Planned Features
 
