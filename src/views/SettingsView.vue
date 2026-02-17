@@ -242,6 +242,7 @@ async function saveSettings() {
   settings.value.background_brightness = parseFloat(bgBrightness.value) || 1.0;
   settings.value.font_size = parseInt(uiFontSize.value) || 14;
   settings.value.color = settings.value.color || "default";
+  settings.value.developer_mode = settings.value.developer_mode || false;
 
   saving.value = true;
   error.value = null;
@@ -361,6 +362,10 @@ function clearBackgroundImage() {
     settings.value.background_image = "";
     markChanged();
   }
+}
+
+function handleDeveloperModeChange() {
+  markChanged();
 }
 </script>
 
@@ -506,6 +511,23 @@ function clearBackgroundImage() {
           </div>
         </div>
       </SLCard>
+
+      <!-- Developer Mode -->
+      <SLCard
+        :title="i18n.t('settings.developer_mode')"
+        :subtitle="i18n.t('settings.developer_mode_desc')"
+      >
+        <div class="settings-group">
+          <div class="setting-row">
+            <div class="setting-info">
+              <span class="setting-label">{{ i18n.t("settings.developer_mode_toggle") }}</span>
+              <span class="setting-desc">{{ i18n.t("settings.developer_mode_toggle_desc") }}</span>
+            </div>
+            <SLSwitch v-model="settings.developer_mode" @update:modelValue="handleDeveloperModeChange" />
+          </div>
+        </div>
+      </SLCard>
+
       <!-- Actions -->
       <div class="settings-actions">
         <div class="actions-left">
