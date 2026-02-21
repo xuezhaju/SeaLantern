@@ -169,7 +169,12 @@ export const contributors: Contributor[] = [
    avatar:"https://api.rms.net.cn/head/Longteng_H",
    url:"https://github.com/longteng-H",
   },
-  
+  {
+    name: "KercyDing",
+    role: "代码审查与CI",
+    avatar: "https://api.rms.net.cn/head/KercyDing",
+    url: "https://github.com/KercyDing",
+  },
   // ============================================
   // 在这里添加更多贡献者！
   // 没有正版怎么办？
